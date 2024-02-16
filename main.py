@@ -43,7 +43,7 @@ async def convert_currency(message: types.Message):
     logger.info(f"User:{message.from_user.id} Command: /convert "
                 f"Amount: {amount} From_Currency: {from_currency} To_Currency: {to_currency}")
 
-    result = get_currency.get_currency(from_currency, to_currency, amount)
+    result = await get_currency.execute(from_currency, to_currency, amount)
 
     logger.info(f"User:{message.from_user.id} Result: {result}")
 
